@@ -11,7 +11,7 @@ const log = log4js.getLogger("Main");
       log.level = "all";
 
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
