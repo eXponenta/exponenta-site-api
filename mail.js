@@ -2,7 +2,7 @@ const auth = require("./auth");
 const mailer = require("nodemailer");
 const log = require("log4js").getLogger("Mailer");
       log.level = "all";
-      
+
 const transport = mailer.createTransport({
 	service: "Yandex",
 	auth: {
@@ -21,7 +21,7 @@ const sendEmail = async body => {
 	//can't be empty
 	if (!email || !token || !message || !subject) {
         
-        log.warn("Empty fields : " + Object.keys(mess).filter( e=> !!mess[e]).join(", "));    
+        log.warn("Empty fields : " + Object.keys(mess).filter( e=> !mess[e]).join(", "));    
 		return Promise.reject({ empty: true });
 	}
 
