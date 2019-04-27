@@ -16,7 +16,7 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post("/post", async (req, res) => {
+app.post("/api/post", async (req, res) => {
     
     try {
     
@@ -37,7 +37,7 @@ app.post("/post", async (req, res) => {
 	}
 });
 
-app.get("/", (req, res, next) => {
+app.get("/api", (req, res, next) => {
 	res.status(418);
 	res.json({
 		error: "cant' implemented!"
